@@ -1,0 +1,49 @@
+[
+    {
+        "documentCode": 15,
+        "shouldCostName": "demo",
+        "documentNumber": "15",
+        "itemType": {
+            "itemTypeCode": 1,
+            "itemTypeName": "product"
+        },
+        "documentStatus": 1,
+        "isConfidential": false,
+         "isTemplate": false,
+          "product": {
+            "productId": 0,
+            "Name": "product0"
+          },
+        "quantity": 23.2,
+        "uom": {
+            "uomCode": "Metric",
+            "uomName": null
+        },
+        "volume": 234,
+        "currencyCode": "USD",
+        "currentCost": 15,
+        "shouldCost": 143,
+        "isDeleted": false,
+        "createdBy": 78,
+        "updatedBy": 56,
+        "createdDate":"2019-02-18T12:11:14.737",
+        "updatedDate": "2020-06-18T12:11:14.737",
+        "listPasCode": [
+        ],
+        "listBUCode": [
+        ],
+        "listRegionCode": [
+        ],
+         "supplier": {
+            "documentStakeholderId":538858,
+            "supplierName": "EMERSON USA",
+            "partnerCode": 0,
+            "contactCode": 0,
+            "documentCode": 0,
+            "stakeholderType": 0,
+            "stakeholderDocumentStatus": 0,
+            "isDeleted": false,
+            "proxyContactCode": 6
+         }
+    }
+]

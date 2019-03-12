@@ -87,22 +87,26 @@
         </label>
         <input type="text" id="photoPath" [(ngModel)]="employee.photoPath" name="photo path" class="form-control">
       </div>
-      <div class="form-group" [class.has-error]="password1.touched && password1.invalid">
-        <label for="password" class="control-label">Password</label>
-        <input type="text"  [(ngModel)] ="employee.password" #password1="ngModel" name="password" class="form-control" required>
-        <span class="help-block" *ngIf="password1.errors?.required && password1.touched">Password is required</span>
-      </div>
-        <div class="form- group" [class.has-error] = "confirmPassword1.touched && confirmPassword1.Invalid">
-          <label class="control-label" for="confirmPassword">ConfirmPassword1</label>
-          <input type="text" appConfirmEqual="password" id="confirmPassword" [(ngModel)] ="confirmPassword" name="confirmPassword" #confirmPassword1="ngModel" class="form-control" required>
-          <span  class="help-block" *ngIf = "confirmPassword1.errors?.required && confirmPassword1.touched">Confirm Password is required</span>
-          <span  *ngIf="confirmPassword1.errors?.notEqual && !confirmPassword1.errors?.required">Password and Confirm Password are not same
-          </span>
-        </div>
       <div class="form-group">
         <button (click)="togglePhotoPreview()" type="button" class="btn btn-primary">
           {{ !previewPhoto ? "Show" : "Hide"}} Preview
         </button>
+      </div>
+      <div ngModelGroup="passwordGroup" appConfirmEqual #passwordGroup="ngModelGroup"
+      [class.has-error]="passwordGroup.errors?.notEqual &&!confirmPassword.errors?.required">
+      <div class="form-group" [class.has-error]="password.touched && password.invalid">
+        <label for="password" class="control-label">Password</label>
+        <input  type="text"  [(ngModel)] ="employee.password" #password="ngModel" name="password" class="form-control" required>
+        <span class="help-block" *ngIf="password.errors?.required && password.touched">Password is required</span>
+      </div>
+        <div class="form- group" [class.has-error] = "confirmPassword.touched && confirmPassword.invalid">
+          <label class="control-label" for="confirmPassword" >ConfirmPassword</label>
+          <input type="text" id="confirmPassword" [(ngModel)] ="employee.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" class="form-control" 
+          >
+          <span  class="help-block" *ngIf = "confirmPassword.errors?.required && confirmPassword.touched">Confirm Password is required</span>
+          <span  class = "help-block" *ngIf="passwordGroup.errors?.notEqual && !confirmPassword.errors?.required">Password and Confirm Password are not same
+          </span>
+        </div>
       </div>
       <div class="form-group">
         <img [src]="employee.photoPath" height="200" width="200" *ngIf="previewPhoto" />

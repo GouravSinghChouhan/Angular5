@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Department } from '../models/department.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { Employee } from '../models/employee.model';
+import { Employee } from '../models/employee.model'
 
 @Component({
   selector: 'app-create-employee',
@@ -16,7 +16,7 @@ export class CreateEmployeeComponent implements OnInit {
     id: null,
     name: null,
     gender: null,
-    email: null,
+    email: null,  
     phoneNumber: null,
     contactPreference: null,
     dateOfBirth: null,
